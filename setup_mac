@@ -1,0 +1,134 @@
+#!/bin/sh
+
+# Welcome to the thoughtbot laptop script!
+# Be prepared to turn your laptop (or desktop, no haters here)
+# into an awesome development machine.
+
+fancy_echo() {
+  local fmt="$1"; shift
+
+  # shellcheck disable=SC2059
+  printf "\\n$fmt\\n" "$@"
+}
+
+append_to_zshrc() {
+  local text="$1" zshrc
+  local skip_new_line="${2:-0}"
+
+  if [ -w "$HOME/.zshrc.local" ]; then
+    zshrc="$HOME/.zshrc.local"
+  else
+    zshrc="$HOME/.zshrc"
+  fi
+
+  if ! grep -Fqs "$text" "$zshrc"; then
+    if [ "$skip_new_line" -eq 1 ]; then
+      printf "%s\\n" "$text" >> "$zshrc"
+    else
+      printf "\\n%s\\n" "$text" >> "$zshrc"
+    fi
+  fi
+}
+
+append_to_fishrc() {
+  local text="$1" fishrc
+  local skip_new_line="${2:-0}"
+
+  fishrc="$HOME/.config/fish/config.fish"
+
+  if ! grep -Fqs "$text" "$fishrc"; then
+    if [ "$skip_new_line" -eq 1 ]; then
+      printf "%s\\n" "$text" >> "$fishrc"
+    else
+      printf "\\n%s\\n" "$text" >> "$fishrc"
+    fi
+  fi
+}
+
+
+if ! command -v brew >/dev/null; then
+  fancy_echo "Installing Homebrew ..."
+    curl -fsS \
+      'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
+
+    append_to_zshrc '# recommended by brew doctor'
+    append_to_zshrc 'export PATH="/usr/local/bin:$PATH"' 1
+
+    echo "ensure /usr/local/bin is part of set -gx PATH"
+
+    export PATH="/usr/local/bin:$PATH"
+fi
+
+brew bundle --file=- <<EOF
+tap "thoughtbot/formulae"
+tap "homebrew/services"
+tap "universal-ctags/universal-ctags"
+tap "homebrew/cask-fonts"
+tap "railwaycat/emacsmacport"
+
+# Unix
+brew "universal-ctags", args: ["HEAD"]
+brew "git"
+brew "openssl"
+brew "rcm"
+brew "reattach-to-user-namespace"
+brew "the_silver_searcher"
+brew "rg"
+brew "tmux"
+brew "nvim"
+brew "watchman"
+brew "zsh"
+brew "fish"
+brew "rbenv"
+brew "fzf"
+brew "tldr"
+brew "jq"
+brew "plantuml"
+brew "direnv"
+brew "graphviz"
+
+# Image manipulation
+brew "imagemagick"
+
+# Programming language prerequisites and package managers
+brew "libyaml" # should come after openssl
+brew "coreutils"
+brew "yarn"
+brew "go"
+brew "borkdude/brew/babashka"
+cask "gpg-suite"
+cask "corretto"
+
+# Databases
+brew "postgres", restart_service: :changed
+brew "redis", restart_service: :changed
+
+# Emacs
+brew "emacs-mac", args: ["with-modules"]
+
+# Fonts
+cask "font-firacode-nerd-font"
+cask "font-fira-code"
+
+# Applications
+cask "aws-vault"
+cask "spectacle"
+cask "iterm2"
+cask "intellij-idea"
+cask "lastpass"
+cask "appcleaner"
+cask "dash"
+cask "google-chrome"
+cask "intellij-idea"
+cask "iterm2"
+cask "postico"
+cask "slack"
+cask "visual-studio-code"
+cask "the-unarchiver"
+cask "macs-fan-control"
+cask "sourcetree"
+cask "alfred"
+cask "whatsapp"
+EOF
+
+fancy_echo "All brew installations complete!!"
