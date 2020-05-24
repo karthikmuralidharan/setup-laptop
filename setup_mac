@@ -86,6 +86,7 @@ brew "jq"
 brew "plantuml"
 brew "direnv"
 brew "graphviz"
+brew "cmake"
 
 # Image manipulation
 brew "imagemagick"
@@ -129,6 +130,8 @@ cask "macs-fan-control"
 cask "sourcetree"
 cask "alfred"
 cask "whatsapp"
+cask "zoomus"
+cask "spotify"
 EOF
 
 fancy_echo "All brew installations complete!!"

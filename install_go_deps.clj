@@ -1,7 +1,6 @@
 #!/usr/bin/env bb
 
-(def go-global-tools [
-                      "github.com/mdempsky/gocode"
+(def go-global-tools ["github.com/mdempsky/gocode"
                       "github.com/uudashr/gopkgs/v2/cmd/gopkgs"
                       "github.com/ramya-rao-a/go-outline"
                       "github.com/acroca/go-symbols"
@@ -18,14 +17,16 @@
                       "github.com/rogpeppe/godef"
                       "golang.org/x/tools/cmd/goimports"
                       "golang.org/x/lint/golint"
-                      "golang.org/x/tools/gopls"
-                      ])
+                      "golang.org/x/tools/gopls"])
 
 
 (defn install-go-tools []
+  (println "")
   (doseq [tool go-global-tools]
+
     (println "Installing" tool)
     (shell/sh "go" "get" tool))
-  (println "go tools installed successfully"))
+
+  (println "Go tools installed successfully!!"))
 
 (install-go-tools)
