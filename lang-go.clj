@@ -21,12 +21,10 @@
 
 
 (defn install-go-tools []
-  (println "")
+  (println "Installing go dependencies")
   (doseq [tool go-global-tools]
-
     (println "Installing" tool)
     (shell/sh "go" "get" tool))
-
   (println "Go tools installed successfully!!"))
 
 (install-go-tools)
