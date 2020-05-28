@@ -25,12 +25,18 @@
                :dirname ".dotfiles"
                :path home})
 
-(def dotfiles-private {:url "git@github.com:karthikmuralidharan/dotfiles-private.git"}
-               :dirname ".dotfiles-private"
-               :path home)
+(def dotfiles-private {:url "git@github.com:karthikmuralidharan/dotfiles-private.git"
+                       :dirname ".dotfiles-private"
+                       :path home})
+
+;; private notes repository
+(def notes {:url "git@github.com:karthikmuralidharan/notes.git"
+            :dirname "notes"
+            :path home})
 
 (doseq [repo-config [emacs-configuration
                      emacs-personal-configuration
                      dotfiles
-                     dotfiles-private]]
+                     dotfiles-private
+                     notes]]
     (git-clone repo-config))
