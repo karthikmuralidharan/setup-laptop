@@ -68,6 +68,7 @@ cask "corretto"
 # Databases
 brew "postgres", restart_service: :changed
 brew "redis", restart_service: :changed
+cask "dynamodb-local"
 cask "nosql-workbench-for-amazon-dynamodb"
 cask "postico"
 
