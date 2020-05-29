@@ -26,10 +26,10 @@ tap "railwaycat/emacsmacport"
 tap "buo/cask-upgrade"
 
 # Unix
+brew "rcm"
 brew "universal-ctags", args: ["HEAD"]
 brew "git"
 brew "openssl"
-brew "rcm"
 brew "reattach-to-user-namespace"
 brew "the_silver_searcher"
 brew "rg"
@@ -46,6 +46,7 @@ brew "plantuml"
 brew "direnv"
 brew "graphviz"
 brew "cmake"
+brew "wget"
 
 # Image manipulation
 brew "imagemagick"
