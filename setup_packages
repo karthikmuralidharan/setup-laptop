@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# Welcome to the thoughtbot laptop script!
-# Be prepared to turn your laptop (or desktop, no haters here)
-# into an awesome development machine.
-
 fancy_echo() {
   local fmt="$1"; shift
 
@@ -57,9 +53,9 @@ brew "imagemagick"
 # Programming language prerequisites and package managers
 brew "libyaml" # should come after openssl
 brew "coreutils"
+brew "borkdude/brew/babashka"
 brew "yarn"
 brew "go"
-brew "borkdude/brew/babashka"
 brew "hugo"
 brew "pandoc"
 cask "gpg-suite"
