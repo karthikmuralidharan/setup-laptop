@@ -14,7 +14,7 @@
 (def home (System/getenv "HOME"))
 
 (def emacs-configuration {:url "git@github.com:hlissner/doom-emacs.git"
-                          :dirname ".emacsd"
+                          :dirname ".emacs.d"
                           :path home})
 
 (def emacs-personal-configuration {:url "git@github.com:karthikmuralidharan/doom-emacs-private.git"

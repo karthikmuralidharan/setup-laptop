@@ -27,6 +27,7 @@ tap "buo/cask-upgrade"
 
 # Unix
 brew "rcm"
+brew "wget"
 brew "universal-ctags", args: ["HEAD"]
 brew "git"
 brew "openssl"
@@ -46,7 +47,6 @@ brew "plantuml"
 brew "direnv"
 brew "graphviz"
 brew "cmake"
-brew "wget"
 
 # Image manipulation
 brew "imagemagick"
