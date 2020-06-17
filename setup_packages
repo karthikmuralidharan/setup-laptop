@@ -47,6 +47,7 @@ brew "plantuml"
 brew "direnv"
 brew "graphviz"
 brew "cmake"
+brew "htop"
 
 # Image manipulation
 brew "imagemagick"
