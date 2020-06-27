@@ -69,6 +69,7 @@ brew "redis", restart_service: :changed
 cask "dynamodb-local"
 cask "nosql-workbench-for-amazon-dynamodb"
 cask "postico"
+cask "google-cloud-sdk"
 
 # Emacs
 brew "emacs-mac", args: ["with-modules"]
@@ -98,6 +99,7 @@ cask "whatsapp"
 cask "zoomus"
 cask "spotify"
 cask "mpv"
+cask "insomnia"
 EOF
 
 fancy_echo "All brew installations complete!!"
