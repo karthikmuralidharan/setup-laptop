@@ -52,7 +52,7 @@ brew "htop"
 # Image manipulation
 brew "imagemagick"
 
-# Programming language prerequisites and package managers
+# dev tools
 brew "libyaml" # should come after openssl
 brew "coreutils"
 brew "borkdude/brew/babashka"
@@ -62,14 +62,15 @@ brew "hugo"
 brew "pandoc"
 cask "gpg-suite"
 cask "corretto"
-
-# Databases
-brew "postgres", restart_service: :changed
-brew "redis", restart_service: :changed
-cask "dynamodb-local"
 cask "nosql-workbench-for-amazon-dynamodb"
 cask "postico"
 cask "google-cloud-sdk"
+cask "docker"
+
+# databases
+brew "postgres", restart_service: :changed
+brew "redis", restart_service: :changed
+cask "dynamodb-local"
 
 # Emacs
 brew "emacs-mac", args: ["with-modules"]
