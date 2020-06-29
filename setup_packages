@@ -35,7 +35,6 @@ brew "reattach-to-user-namespace"
 brew "the_silver_searcher"
 brew "rg"
 brew "tmux"
-brew "nvim"
 brew "watchman"
 brew "zsh"
 brew "fish"
@@ -67,13 +66,17 @@ cask "postico"
 cask "google-cloud-sdk"
 cask "docker"
 
-# databases
+# Databases
 brew "postgres", restart_service: :changed
 brew "redis", restart_service: :changed
 cask "dynamodb-local"
 
-# Emacs
+# Editors
 brew "emacs-mac", args: ["with-modules"]
+brew "nvim"
+cask "intellij-idea"
+cask "jetbrains-toolbox"
+cask "visual-studio-code"
 
 # Fonts
 cask "font-firacode-nerd-font"
@@ -83,15 +86,12 @@ cask "font-fira-code"
 cask "aws-vault"
 cask "spectacle"
 cask "iterm2"
-cask "intellij-idea"
 cask "lastpass"
 cask "appcleaner"
 cask "dash"
 cask "google-chrome"
-cask "intellij-idea"
 cask "iterm2"
 cask "slack"
-cask "visual-studio-code"
 cask "the-unarchiver"
 cask "macs-fan-control"
 cask "sourcetree"
