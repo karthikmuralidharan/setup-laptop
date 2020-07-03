@@ -13,30 +13,26 @@
 ;; Configurations
 (def home (System/getenv "HOME"))
 
-(def emacs-configuration {:url "git@github.com:hlissner/doom-emacs.git"
-                          :dirname ".emacs.d"
-                          :path home})
+(def repositories {:emacs-configuration {:url "git@github.com:hlissner/doom-emacs.git"
+                                         :dirname ".emacs.d"
+                                         :path home}
 
-(def emacs-personal-configuration {:url "git@github.com:karthikmuralidharan/doom-emacs-private.git"
-                                   :dirname ".doom.d"
-                                   :path home})
+                   :dotfiles {:url "git@github.com:karthikmuralidharan/dotfiles.git"
+                              :dirname ".dotfiles"
+                              :path home}
 
-(def dotfiles {:url "git@github.com:karthikmuralidharan/dotfiles.git"
-               :dirname ".dotfiles"
-               :path home})
+                   :notes {:url "git@github.com:karthikmuralidharan/notes.git"
+                           :dirname "notes"
+                           :path home}
 
-(def dotfiles-private {:url "git@github.com:karthikmuralidharan/dotfiles-private.git"
-                       :dirname ".dotfiles-private"
-                       :path home})
+                   :dotfiles-private {:url "git@github.com:karthikmuralidharan/dotfiles-private.git"
+                                      :dirname ".dotfiles-private"
+                                      :path home}
 
-;; private notes repository
-(def notes {:url "git@github.com:karthikmuralidharan/notes.git"
-            :dirname "notes"
-            :path home})
+                   :emacs-personal-configuration {:url "git@github.com:karthikmuralidharan/doom-emacs-private.git"
+                                                  :dirname ".doom.d"
+                                                  :path home}})
 
-(doseq [repo-config [emacs-configuration
-                     emacs-personal-configuration
-                     dotfiles
-                     dotfiles-private
-                     notes]]
-    (git-clone repo-config))
+(let [repo-items (vals repositories)]
+  (doseq [item repo-items]
+    (git-clone item)))
