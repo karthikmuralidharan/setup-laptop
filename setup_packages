@@ -47,6 +47,9 @@ brew "direnv"
 brew "graphviz"
 brew "cmake"
 brew "htop"
+brew "fd"
+brew "tree"
+brew "ack"
 
 # Image manipulation
 brew "imagemagick"
