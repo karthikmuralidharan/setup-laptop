@@ -18,6 +18,7 @@ if ! command -v brew >/dev/null; then
 fi
 
 brew bundle --file=- <<EOF
+# Taps
 tap "thoughtbot/formulae"
 tap "homebrew/services"
 tap "universal-ctags/universal-ctags"
@@ -75,7 +76,7 @@ brew "redis", restart_service: :changed
 cask "dynamodb-local"
 
 # Editors
-brew "emacs-mac", args: ["with-modules"]
+brew "emacs-mac", args: ["with-modules", "with-rsvg", "with-natural-title-bar", "with-modern-icon", "with-starter", "with-jansson", "HEAD"]
 brew "nvim"
 cask "intellij-idea"
 cask "jetbrains-toolbox"
@@ -107,3 +108,5 @@ cask "insomnia"
 EOF
 
 fancy_echo "All brew installations complete!!"
+
+
