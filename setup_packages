@@ -25,10 +25,12 @@ tap "universal-ctags/universal-ctags"
 tap "homebrew/cask-fonts"
 tap "railwaycat/emacsmacport"
 tap "buo/cask-upgrade"
+tap "wallix/awless"
 
 # Unix
 brew "rcm"
 brew "wget"
+brew "telnet"
 brew "universal-ctags", args: ["HEAD"]
 brew "git"
 brew "openssl"
@@ -51,6 +53,8 @@ brew "htop"
 brew "fd"
 brew "tree"
 brew "ack"
+brew "awscli"
+brew "awless"
 
 # Image manipulation
 brew "imagemagick"
@@ -59,6 +63,7 @@ brew "imagemagick"
 brew "libyaml" # should come after openssl
 brew "coreutils"
 brew "borkdude/brew/babashka"
+brew "hydra"
 brew "yarn"
 brew "go"
 brew "hugo"
