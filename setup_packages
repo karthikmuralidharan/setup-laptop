@@ -26,13 +26,16 @@ tap "homebrew/cask-fonts"
 tap "railwaycat/emacsmacport"
 tap "buo/cask-upgrade"
 tap "wallix/awless"
+tap "borkdude/brew"
 
 # Unix
+brew "fish"
 brew "rcm"
 brew "wget"
 brew "telnet"
 brew "universal-ctags", args: ["HEAD"]
 brew "git"
+brew "svn"
 brew "openssl"
 brew "reattach-to-user-namespace"
 brew "the_silver_searcher"
@@ -40,7 +43,6 @@ brew "rg"
 brew "tmux"
 brew "watchman"
 brew "zsh"
-brew "fish"
 brew "rbenv"
 brew "fzf"
 brew "tldr"
@@ -68,7 +70,6 @@ brew "yarn"
 brew "go"
 brew "hugo"
 brew "pandoc"
-cask "gpg-suite"
 cask "corretto"
 cask "nosql-workbench-for-amazon-dynamodb"
 cask "postico"
@@ -78,20 +79,21 @@ cask "docker"
 # Databases
 brew "postgres", restart_service: :changed
 brew "redis", restart_service: :changed
-cask "dynamodb-local"
 
 # Editors
 brew "emacs-mac", args: ["with-modules", "with-rsvg", "with-natural-title-bar", "with-modern-icon", "with-starter", "with-jansson", "HEAD"]
 brew "nvim"
 cask "intellij-idea"
 cask "jetbrains-toolbox"
-cask "visual-studio-code"
+cask "sublime-text"
 
 # Fonts
-cask "font-firacode-nerd-font"
+cask "font-fira-mono-nerd-font"
+cask "font-fira-mono-for-powerline"
 cask "font-fira-code"
 
 # Applications
+cask "gpg-suite"
 cask "aws-vault"
 cask "spectacle"
 cask "iterm2"
@@ -109,7 +111,7 @@ cask "whatsapp"
 cask "zoomus"
 cask "spotify"
 cask "mpv"
-cask "insomnia"
+cask "insomnia-designer"
 EOF
 
 fancy_echo "All brew installations complete!!"
