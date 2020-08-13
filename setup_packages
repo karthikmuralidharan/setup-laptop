@@ -81,7 +81,7 @@ brew "postgres", restart_service: :changed
 brew "redis", restart_service: :changed
 
 # Editors
-brew "emacs-mac", args: ["with-modules", "with-rsvg", "with-natural-title-bar", "with-modern-icon", "with-starter", "with-jansson", "HEAD"]
+brew "emacs-mac", args: ["with-modules", "with-rsvg", "with-natural-title-bar", "with-modern-icon", "with-starter", "with-imagemagick"]
 brew "nvim"
 cask "intellij-idea"
 cask "jetbrains-toolbox"
