@@ -33,6 +33,8 @@
                                                   :dirname ".doom.d"
                                                   :path home}})
 
+
 (let [repo-items (vals repositories)]
   (doseq [item repo-items]
     (git-clone item)))
+

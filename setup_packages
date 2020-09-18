@@ -86,6 +86,7 @@ brew "nvim"
 cask "intellij-idea"
 cask "jetbrains-toolbox"
 cask "sublime-text"
+cask "visual-studio-code"
 
 # Fonts
 cask "font-fira-mono-nerd-font"
@@ -93,6 +94,7 @@ cask "font-fira-mono-for-powerline"
 cask "font-fira-code"
 
 # Applications
+cask "ngrok"
 cask "gpg-suite"
 cask "aws-vault"
 cask "spectacle"
@@ -112,6 +114,8 @@ cask "zoomus"
 cask "spotify"
 cask "mpv"
 cask "insomnia-designer"
+cask "lunar"
+
 EOF
 
 fancy_echo "All brew installations complete!!"
