@@ -27,7 +27,7 @@ tap "railwaycat/emacsmacport"
 tap "buo/cask-upgrade"
 tap "wallix/awless"
 tap "borkdude/brew"
-
+tap "augmentable-dev/askgit"
 # Unix
 brew "fish"
 brew "rcm"
@@ -57,6 +57,7 @@ brew "tree"
 brew "ack"
 brew "awscli"
 brew "awless"
+brew "askgit"
 
 # Image manipulation
 brew "imagemagick"
