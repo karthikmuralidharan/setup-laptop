@@ -116,7 +116,7 @@ cask "spotify"
 cask "mpv"
 cask "insomnia-designer"
 cask "lunar"
-
+cask "raindropio"
 EOF
 
 fancy_echo "All brew installations complete!!"
