@@ -11,9 +11,9 @@ if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
 
   curl -fsS 'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
-  
+
   fancy_echo "ensure /usr/local/bin is part of set -gx PATH"
-  
+
   export PATH="/usr/local/bin:$PATH"
 fi
 
@@ -28,6 +28,8 @@ tap "buo/cask-upgrade"
 tap "wallix/awless"
 tap "borkdude/brew"
 tap "augmentable-dev/askgit"
+tap "homebrew/cask-versions"
+
 # Unix
 brew "fish"
 brew "rcm"
@@ -71,11 +73,16 @@ brew "yarn"
 brew "go"
 brew "hugo"
 brew "pandoc"
-cask "corretto"
 cask "nosql-workbench-for-amazon-dynamodb"
 cask "postico"
-cask "google-cloud-sdk"
 cask "docker"
+
+# java
+cask "homebrew/cask-versions/corretto11"
+cask "homebrew/cask-versions/adoptopenjdk8"
+brew "gradle"
+brew "jenv"
+brew "mvnvm"
 
 # Databases
 brew "postgres", restart_service: :changed
@@ -116,9 +123,7 @@ cask "spotify"
 cask "mpv"
 cask "insomnia-designer"
 cask "lunar"
-cask "raindropio"
+cask "trello"
 EOF
 
 fancy_echo "All brew installations complete!!"
-
-
