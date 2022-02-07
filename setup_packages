@@ -10,8 +10,7 @@ fancy_echo() {
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
 
-  curl -fsS 'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
-
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
   fancy_echo "ensure /usr/local/bin is part of set -gx PATH"
 
   export PATH="/usr/local/bin:$PATH"
@@ -23,12 +22,11 @@ tap "thoughtbot/formulae"
 tap "homebrew/services"
 tap "universal-ctags/universal-ctags"
 tap "homebrew/cask-fonts"
-tap "railwaycat/emacsmacport"
-tap "buo/cask-upgrade"
-tap "wallix/awless"
+# tap "railwaycat/emacsmacport"
 tap "borkdude/brew"
-tap "augmentable-dev/askgit"
+tap "mergestat/mergestat"
 tap "homebrew/cask-versions"
+tap "homebrew/cask-drivers"
 
 # Unix
 brew "fish"
@@ -40,7 +38,6 @@ brew "git"
 brew "svn"
 brew "openssl"
 brew "reattach-to-user-namespace"
-brew "the_silver_searcher"
 brew "rg"
 brew "tmux"
 brew "watchman"
@@ -58,8 +55,7 @@ brew "fd"
 brew "tree"
 brew "ack"
 brew "awscli"
-brew "awless"
-brew "askgit"
+brew "mergestat"
 
 # Image manipulation
 brew "imagemagick"
@@ -73,25 +69,25 @@ brew "yarn"
 brew "go"
 brew "hugo"
 brew "pandoc"
-cask "nosql-workbench-for-amazon-dynamodb"
-cask "postico"
+brew "kubectx"
 cask "docker"
+cask "sequel-ace"
+cask "lens"
+cask "sourcetree"
 
 # java
-cask "homebrew/cask-versions/corretto11"
-cask "homebrew/cask-versions/adoptopenjdk8"
+cask "temurin"
 brew "gradle"
-brew "jenv"
 brew "mvnvm"
 
 # Databases
-brew "postgres", restart_service: :changed
+# brew "postgres", restart_service: :changed
 brew "redis", restart_service: :changed
+brew "mysql", restart_service: :changed
 
 # Editors
-brew "emacs-mac", args: ["with-modules", "with-rsvg", "with-natural-title-bar", "with-modern-icon", "with-starter", "with-imagemagick"]
+# brew "emacs-mac", args: ["with-modules", "with-rsvg", "with-natural-title-bar", "with-modern-icon", "with-starter", "with-imagemagick"]
 brew "nvim"
-cask "intellij-idea"
 cask "jetbrains-toolbox"
 cask "sublime-text"
 cask "visual-studio-code"
@@ -105,11 +101,9 @@ cask "font-fira-code"
 cask "ngrok"
 cask "gpg-suite"
 cask "aws-vault"
-cask "spectacle"
+cask "rectangle"
 cask "iterm2"
-cask "lastpass"
 cask "appcleaner"
-cask "dash"
 cask "google-chrome"
 cask "iterm2"
 cask "sublime-merge"
@@ -118,12 +112,18 @@ cask "the-unarchiver"
 cask "macs-fan-control"
 cask "alfred"
 cask "whatsapp"
-cask "zoomus"
 cask "spotify"
 cask "mpv"
-cask "insomnia-designer"
+cask "insomnia"
 cask "lunar"
-cask "trello"
+cask "authy"
+cask "bitwarden"
+cask "firefox" 
+cask "audacity"
+# cask "postico"
+
+# Drivers
+cask "logitech-options"
 EOF
 
 fancy_echo "All brew installations complete!!"
